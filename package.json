@@ -1,0 +1,14 @@
+{
+  "name": "sds_frontend_project",
+  "version": "1.0.0",
+  "description": "Project for sds_frontend course",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "author": "Oskari Lehtonen",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^8.0.0"
+  }
+}
