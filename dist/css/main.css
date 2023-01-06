@@ -1,3 +1,86 @@
+.playing-grid {
+  display: grid;
+  grid-template-areas: 'box0 box1 box2' 'box3 box4 box5' 'box6 box7 box8';
+  grid-template-columns: repeat(3, 20vh);
+  margin-left: 65vh; }
+  .playing-grid .box-0 {
+    grid-area: box0; }
+  .playing-grid .box-1 {
+    grid-area: box1; }
+  .playing-grid .box-2 {
+    grid-area: box2; }
+  .playing-grid .box-3 {
+    grid-area: box3; }
+  .playing-grid .box-4 {
+    grid-area: box4; }
+  .playing-grid .box-5 {
+    grid-area: box5; }
+  .playing-grid .box-6 {
+    grid-area: box6; }
+  .playing-grid .box-7 {
+    grid-area: box7; }
+  .playing-grid .box-8 {
+    grid-area: box8; }
+  .playing-grid .box {
+    display: flex;
+    flex-flow: nowrap;
+    height: 20vh;
+    align-items: center;
+    justify-content: center;
+    border: 3px #2dbdbd solid;
+    background: #373737;
+    cursor: pointer; }
+    .playing-grid .box:hover {
+      background: #2b2b2b;
+      transition: all 1s ease-out; }
+    .playing-grid .box .marker {
+      visibility: hidden;
+      width: 15vh;
+      z-index: 2;
+      height: 15vh; }
+  .playing-grid .circle .marker {
+    visibility: visible; }
+    .playing-grid .circle .marker:nth-child(1) {
+      border-radius: 50%;
+      border: 3px #fff solid; }
+    .playing-grid .circle .marker:nth-child(2) {
+      width: 0;
+      height: 0; }
+  .playing-grid .cross .marker {
+    visibility: visible;
+    height: 4px;
+    background: #fff; }
+    .playing-grid .cross .marker:nth-child(1) {
+      transform: rotate(45deg) translate(34px, -30px); }
+    .playing-grid .cross .marker:nth-child(2) {
+      transform: rotate(-45deg) translate(-34px, -30px); }
+
+.clear-btn {
+  background: #373737;
+  text-align: center;
+  width: 7rem;
+  font-size: 1.5rem;
+  border: 3px #2dbdbd solid;
+  position: absolute;
+  left: 48vh;
+  top: 58vh;
+  cursor: pointer; }
+  .clear-btn:hover {
+    border-color: #1b7373;
+    opacity: 0.5;
+    transition: all 1s ease-out; }
+
+.turn-indicator {
+  position: absolute;
+  left: 50vh; }
+  .turn-indicator .crosses-turn, .turn-indicator .circles-turn {
+    visibility: hidden;
+    position: absolute; }
+  .turn-indicator.circles .circles-turn {
+    visibility: visible; }
+  .turn-indicator.crosses .crosses-turn {
+    visibility: visible; }
+
 .menu-btn {
   position: absolute;
   z-index: 3;
@@ -52,7 +135,7 @@
       transform: translate3d(0, 0, 0);
       transition-delay: 0.3s; }
     .menu .nav-item.current > a {
-      color: #088; }
+      color: #2dbdbd; }
   .menu .nav-link {
     display: block;
     position: relative;
@@ -64,13 +147,13 @@
     text-decoration: none;
     transition: all 1s ease-out; }
     .menu .nav-link:hover {
-      color: #088; }
+      color: #2dbdbd; }
 
 * {
   box-sizing: border-box; }
 
 body {
-  background: #444;
+  background: #444444;
   color: #fff;
   height: 100%;
   margin: 0;
@@ -86,6 +169,7 @@ h3 {
   h1.lg-heading,
   h2.lg-heading,
   h3.lg-heading {
+    margin-top: 1rem;
     font-size: 4rem;
     margin-bottom: 2rem; }
   h1.sm-heading,
@@ -94,7 +178,7 @@ h3 {
     font-size: 2rem;
     margin-bottom: 4rem;
     background: #515151;
-    border-bottom: #088 5px solid; }
+    border-bottom: #2dbdbd 5px solid; }
 
 header {
   position: fixed;
@@ -102,7 +186,7 @@ header {
   width: 100%; }
 
 .text-secondary {
-  color: #088; }
+  color: #2dbdbd; }
 
 main {
   padding: 3rem;
@@ -110,23 +194,42 @@ main {
   main .introduction {
     display: grid;
     grid-gap: 30px;
-    grid-template-areas: 'about about' 'quiz tictactoe';
+    grid-template-areas: 'about about' 'contacts tictactoe';
     grid-template-columns: repeat(2, 1fr); }
     main .introduction .about-project {
       grid-area: about;
       padding: 0.5rem;
       background: #515151;
       padding: 0.5rem;
-      border: #088 3px solid; }
-    main .introduction .about-quiz {
-      grid-area: quiz;
+      border: #2dbdbd 3px solid; }
+    main .introduction .about-contacts {
+      grid-area: contacts;
       padding: 0.5rem;
       background: #515151;
       padding: 0.5rem;
-      border: #088 3px solid; }
+      border: #2dbdbd 3px solid; }
     main .introduction .about-tic-tac-toe {
       grid-area: tictactoe;
       padding: 0.5rem;
       background: #515151;
       padding: 0.5rem;
-      border: #088 3px solid; }
+      border: #2dbdbd 3px solid; }
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .boxes div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    transition: all 1s ease-out; }
+    .boxes div:hover {
+      padding: 1rem 2rem;
+      background: #2b2b2b;
+      border-color: #2dbdbd; }
+    .boxes div .contact-link {
+      color: #fff;
+      text-decoration: none; }

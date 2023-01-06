@@ -1,4 +1,5 @@
 @import "config";
+@import "tictactoe";
 @import "menu";
 
 * {
@@ -23,6 +24,7 @@ h3 {
     font-size: 1.8rem;
     
     &.lg-heading {
+        margin-top: 1rem;
         font-size: 4rem;
         margin-bottom: 2rem;
     }
@@ -52,7 +54,7 @@ main {
     .introduction {
         display: grid;
         grid-gap: 30px;
-        grid-template-areas: 'about about' 'quiz tictactoe';
+        grid-template-areas: 'about about' 'contacts tictactoe';
         grid-template-columns: repeat(2, 1fr);
     
         .about-project {
@@ -63,8 +65,8 @@ main {
             border: $secondary-color 3px solid;
         }
     
-        .about-quiz {
-            grid-area: quiz;
+        .about-contacts {
+            grid-area: contacts;
             padding: 0.5rem;
             background: lighten($primary-color, 5);
             padding: 0.5rem;
@@ -80,4 +82,34 @@ main {
         }
     }
 }
+
+//Contacts page
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+
+    div {
+        font-size: 2rem;
+        border: 3px #fff solid;
+        padding: 1.5rem 2.5rem;
+        @include easeOut;
+
+        &:hover {
+            padding: 1rem 2rem;
+            background: darken($primary-color, 10);
+            border-color: $secondary-color;
+            
+        }
+
+        .contact-link {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+
 
