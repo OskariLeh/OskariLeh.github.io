@@ -1,11 +1,9 @@
+// Handle the nav menu
 const menuBtn = document.querySelector(".menu-btn");
 const menu = document.querySelector(".menu");
 const menuNav = document.querySelector(".menu-nav");
 const navItems = document.querySelectorAll(".nav-item");
 
-
-
-// Initial state of menu
 let showMenu = false;
 
 menuBtn.addEventListener("click", toggleMenu);

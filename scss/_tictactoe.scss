@@ -3,10 +3,12 @@
 
 // The grid for playing
 .playing-grid {
+    position: absolute;
     display: grid;
     grid-template-areas: 'box0 box1 box2' 'box3 box4 box5' 'box6 box7 box8';
-    grid-template-columns: repeat(3, 20vh);
-    margin-left: 65vh;
+    grid-template-columns: repeat(3, 180px);
+    left: 20vh;
+    top: 33vh;
 
     .box-0 {
         grid-area: box0;
@@ -39,7 +41,8 @@
     .box {
         display: flex;
         flex-flow: nowrap;
-        height: 20vh;
+        width: 180px;
+        height: 180px;
         align-items: center;
         justify-content: center;
         border: 3px $secondary-color solid;
@@ -53,9 +56,6 @@
 
         .marker {
             visibility: hidden;
-            width: 15vh;
-            z-index: 2;
-            height: 15vh;
         }  
 
     }
@@ -63,6 +63,9 @@
     .circle {
         .marker {
             visibility: visible;
+            width: 150px;
+            z-index: 2;
+            height: 150px;
             
             &:nth-child(1) {
                 border-radius: 50%;
@@ -79,6 +82,8 @@
         .marker {
             visibility: visible;
             height: 4px;
+            width: 150px;
+            z-index: 2;
             background: #fff;
             &:nth-child(1) {
                 transform: rotate(45deg) translate(34px, -30px);
@@ -88,7 +93,6 @@
             }
         }
     }
-
 }
 
 // Button to clear the playing grid
@@ -99,8 +103,8 @@
     font-size: 1.5rem;
     border: 3px $secondary-color solid;
     position: absolute;
-    left: 48vh;
-    top: 58vh;
+    left: 30vh;
+    top: 60vh;
     cursor: pointer;
 
     &:hover {
@@ -114,7 +118,8 @@
 // Text that tells whose turn it is
 .turn-indicator {
     position: absolute;
-    left: 50vh;
+    left: 4vh;
+    top: 33vh;
 
     .crosses-turn, .circles-turn {
         visibility: hidden;

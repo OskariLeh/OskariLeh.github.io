@@ -1,0 +1,81 @@
+// scss for responsiveness
+
+@include mediaXL {
+
+    .playing-grid {
+        left: 70vh;
+    }
+
+    .turn-indicator {
+        left: 45vh;
+        top: 33vh;
+    }
+
+    .clear-btn {
+        left: 45vh;
+        top: 60vh;
+    }
+}
+
+@include mediaLg {
+}
+
+@include mediaMd {
+    main {
+        align-items: center;
+        text-align: center;
+        
+        .lg-heading {
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .introduction {
+            grid-template-areas: 
+            'about'
+            'contacts'
+            'tictactoe';
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .playing-grid {
+        left: 10vh;
+    }
+
+    .turn-indicator {
+        top: 22vh;
+        left: 35vh;
+    }
+
+    .clear-btn {
+        top: 25vh;
+        left: 14vh;
+    }
+}
+
+@include mediaSm {
+    main#tictactoe h2{
+        visibility: hidden;
+    }
+
+    ul.menu-nav {
+        float: none;
+        width: 100%;
+        min-height: 0;
+    }
+
+    .playing-grid {
+        left: 1vh;
+    }
+
+    .turn-indicator {
+        top: 22vh;
+        left: 35vh;
+    }
+
+    .clear-btn {
+        top: 25vh;
+        left: 14vh;
+    }
+
+}

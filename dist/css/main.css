@@ -1,8 +1,10 @@
 .playing-grid {
+  position: absolute;
   display: grid;
   grid-template-areas: 'box0 box1 box2' 'box3 box4 box5' 'box6 box7 box8';
-  grid-template-columns: repeat(3, 20vh);
-  margin-left: 65vh; }
+  grid-template-columns: repeat(3, 180px);
+  left: 20vh;
+  top: 33vh; }
   .playing-grid .box-0 {
     grid-area: box0; }
   .playing-grid .box-1 {
@@ -24,7 +26,8 @@
   .playing-grid .box {
     display: flex;
     flex-flow: nowrap;
-    height: 20vh;
+    width: 180px;
+    height: 180px;
     align-items: center;
     justify-content: center;
     border: 3px #2dbdbd solid;
@@ -34,12 +37,12 @@
       background: #2b2b2b;
       transition: all 1s ease-out; }
     .playing-grid .box .marker {
-      visibility: hidden;
-      width: 15vh;
-      z-index: 2;
-      height: 15vh; }
+      visibility: hidden; }
   .playing-grid .circle .marker {
-    visibility: visible; }
+    visibility: visible;
+    width: 150px;
+    z-index: 2;
+    height: 150px; }
     .playing-grid .circle .marker:nth-child(1) {
       border-radius: 50%;
       border: 3px #fff solid; }
@@ -49,6 +52,8 @@
   .playing-grid .cross .marker {
     visibility: visible;
     height: 4px;
+    width: 150px;
+    z-index: 2;
     background: #fff; }
     .playing-grid .cross .marker:nth-child(1) {
       transform: rotate(45deg) translate(34px, -30px); }
@@ -62,8 +67,8 @@
   font-size: 1.5rem;
   border: 3px #2dbdbd solid;
   position: absolute;
-  left: 48vh;
-  top: 58vh;
+  left: 30vh;
+  top: 60vh;
   cursor: pointer; }
   .clear-btn:hover {
     border-color: #1b7373;
@@ -72,7 +77,8 @@
 
 .turn-indicator {
   position: absolute;
-  left: 50vh; }
+  left: 4vh;
+  top: 33vh; }
   .turn-indicator .crosses-turn, .turn-indicator .circles-turn {
     visibility: hidden;
     position: absolute; }
@@ -233,3 +239,48 @@ main {
     .boxes div .contact-link {
       color: #fff;
       text-decoration: none; }
+
+@media screen and (min-width: 1171px) {
+  .playing-grid {
+    left: 70vh; }
+  .turn-indicator {
+    left: 45vh;
+    top: 33vh; }
+  .clear-btn {
+    left: 45vh;
+    top: 60vh; } }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+    main .introduction {
+      grid-template-areas: 'about' 'contacts' 'tictactoe';
+      grid-template-columns: 1fr; }
+  .playing-grid {
+    left: 10vh; }
+  .turn-indicator {
+    top: 22vh;
+    left: 35vh; }
+  .clear-btn {
+    top: 25vh;
+    left: 14vh; } }
+
+@media screen and (max-width: 650px) {
+  main#tictactoe h2 {
+    visibility: hidden; }
+  ul.menu-nav {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+  .playing-grid {
+    left: 1vh; }
+  .turn-indicator {
+    top: 22vh;
+    left: 35vh; }
+  .clear-btn {
+    top: 25vh;
+    left: 14vh; } }
